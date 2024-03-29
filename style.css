@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+@media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -13,13 +18,19 @@ body {
 header {
   background-color: #25b79f;
   height: 100vh;
-  @media (orientation: landscape) and (max-height: 500px) {
+}
+  @media screen and (max-width: 600px) {
+    .header {
+      height: 80vh;
+    }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
     height: 90vmax;
   }
 }
 
 .container {
-  max-width: 1200px;
   width: 90%;
   margin: auto;
 }
@@ -102,6 +113,11 @@ header {
   color: #07374a;
   padding: 1rem;
 }
+@media (max-width: 600px) {
+  .angle-down-icon {
+    bottom: 20%;
+  }
+}
 
 /* ////........About Me........//// */
 
@@ -156,10 +172,47 @@ header {
   flex-basis: 45%;
 }
 
-/* ///.....Skill Bar....../// */
 
+/* ///.....Skill Bar....../// */
+h6 {
+  font-size: 2.2rem; 
+  text-align: center;
+
+}
+
+@media (max-width: 600px) {
+   h6 {
+    max-width: 70%; 
+    margin-top: 12%;
+    text-align: center;
+    margin-left: 50px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .skills {
+    flex-direction: row;
+  }
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .skills {
+    flex-direction: row;
+  }
+}
 .skills-bar {
   padding: 25px 30px;
+}
+@media (max-width: 600px) {
+  .skills-bar {
+    width: 90vw;
+  }
 }
 
 .skills-bar .bar {
@@ -292,6 +345,13 @@ header {
 
 .work-arrow-2 {
   margin: 2rem 0;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .work-arrow-2 {
+    display: block;
+  }
 }
 
 .work-arrow-2 a {
@@ -304,35 +364,41 @@ header {
 /* ////.....certifications......///// */
 .my-certifications{
   background-color: #25b79f;
-  height: 100vh;
+  height: 165vh;
+  
+  
 }
 h5{
-  position: absolute;
   color: #07374a;
   text-align: center;
   width: 100%;
   font-size: 200%;
   justify-content: center;
-  margin-top: 90px;
-  margin-left: -70px;
 }
 .certificates {
   display: flex;
-  transition: background 0.5s;
-  gap: 25px;
-  
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ gap: 20px;
+ flex-wrap: wrap;
+ 
+}
+@media (max-width: 600px) {
+  .certificates {
+    flex-direction: column;
+    width: 500px;
+    max-width: 100%;
+  }
 }
 .certificates img {
-  width: 35%;
-  transition: transform 0.5s;
-  margin-bottom: 40px;
-  margin-left: -20px;
-  margin-top: 160px;
+  width: 400px;
+ max-width: 300%;
+
 }
 
 .certificates img:hover {
   transform: scale(1.1);
- 
 }
 
 
@@ -386,9 +452,6 @@ h5{
 /* ////......Media query......//// */
 
 @media (max-width: 500px) {
-  html {
-    font-size: 60%;
-  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -453,9 +516,6 @@ h5{
 }
 
 @media (min-width: 501px) and (max-width: 768px) {
-  html {
-    font-size: 65%;
-  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -520,9 +580,6 @@ h5{
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
-  html {
-    font-size: 70%;
-  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -568,11 +625,6 @@ h5{
   }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
-  .header {
-    height: 90vmax;
-  }
-}
 /**seção educação experiencia idioma**/
 #list {
   display: flex;
@@ -591,7 +643,17 @@ h5{
   transition: 0.3s;
   margin-right: 10px;
 }
+@media (max-width: 600px) {
+  #list {
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+  }
 
+  #list button {
+    margin-right: 0; 
+    padding: 10px 5px; 
+  }
+}
 #list button:hover {
   background-color: #ff004f;
 }
@@ -599,13 +661,19 @@ h5{
 
 #education-content, #experience-content, #languages-content {
   margin: 20px auto;
-  width: 80%;
+  width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: none;
+  display: flex; 
+  flex-direction: column; 
 }
 
+@media (max-width: 600px) {
+  #education-content, #experience-content, #languages-content {
+    width: 100%;
+  }
+}
 #education-content h2, #experience-content h2 {
   font-size: 15px;
   margin-bottom: 10px;
