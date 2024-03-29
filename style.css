@@ -13,6 +13,9 @@ body {
 header {
   background-color: #25b79f;
   height: 100vh;
+  @media (orientation: landscape) and (max-height: 500px) {
+    height: 90vmax;
+  }
 }
 
 .container {
@@ -105,6 +108,10 @@ header {
 .about-me {
   background-color: #07374a;
   padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .about-me .about-heading {
