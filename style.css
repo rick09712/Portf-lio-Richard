@@ -1,16 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
- 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-@media (min-width: 769px) and (max-width: 1200px) {
-  html {
-    font-size: 70%;
-  }
-}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -24,14 +19,11 @@ header {
       height: 80vh;
     }
 }
-@media (orientation: landscape) and (max-height: 500px) {
-  .header {
-    height: 90vmax;
-  }
-}
 
 .container {
-  width: 90%;
+  overflow-x: hidden;
+  max-width: 1200px;
+  width: 100%;
   margin: auto;
 }
 
@@ -49,7 +41,6 @@ header {
   align-items: center;
   height: 64px;
 }
-
 .menu-items {
   display: flex;
 }
@@ -113,12 +104,11 @@ header {
   color: #07374a;
   padding: 1rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .angle-down-icon {
-    bottom: 20%;
+  margin-bottom: 80px;
   }
 }
-
 /* ////........About Me........//// */
 
 .about-me {
@@ -142,6 +132,8 @@ header {
   width: 150px;
   object-fit: cover;
   border-radius: 5%;
+  max-width: 100%;
+
 }
 
 .about-content p {
@@ -172,47 +164,10 @@ header {
   flex-basis: 45%;
 }
 
-
 /* ///.....Skill Bar....../// */
-h6 {
-  font-size: 2.2rem; 
-  text-align: center;
 
-}
-
-@media (max-width: 600px) {
-   h6 {
-    max-width: 70%; 
-    margin-top: 12%;
-    text-align: center;
-    margin-left: 50px;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .skills {
-    flex-direction: row;
-  }
-}
-.skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (max-width: 600px) {
-  .skills {
-    flex-direction: row;
-  }
-}
 .skills-bar {
   padding: 25px 30px;
-}
-@media (max-width: 600px) {
-  .skills-bar {
-    width: 90vw;
-  }
 }
 
 .skills-bar .bar {
@@ -326,7 +281,6 @@ h6 {
   color: #f0f0e6;
   transition: color 1s ease 0s;
 }
-
 .navbar-brand {
   display: none;
   color: #f0f0e6;
@@ -334,7 +288,7 @@ h6 {
 }
 
 .work-arrow {
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .work-arrow a {
@@ -345,13 +299,6 @@ h6 {
 
 .work-arrow-2 {
   margin: 2rem 0;
-  display: none;
-}
-
-@media (min-width: 600px) {
-  .work-arrow-2 {
-    display: block;
-  }
 }
 
 .work-arrow-2 a {
@@ -363,44 +310,50 @@ h6 {
 
 /* ////.....certifications......///// */
 .my-certifications{
-  background-color: #25b79f;
-  height: 165vh;
-  
-  
-}
-h5{
-  color: #07374a;
-  text-align: center;
-  width: 100%;
-  font-size: 200%;
-  justify-content: center;
+background-color: #25b79f;
 }
 .certificates {
   display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center;
- gap: 20px;
- flex-wrap: wrap;
+  
+  transition: background 0.5s;
+  gap: 20px;
  
 }
-@media (max-width: 600px) {
-  .certificates {
-    flex-direction: column;
-    width: 500px;
-    max-width: 100%;
-  }
-}
 .certificates img {
-  width: 400px;
- max-width: 300%;
+  width: 50%;
+  transition: transform 0.5s;
+  margin-bottom: 40px;
+}
+ 
+.certificate-2 {
+  display: flex;
+  gap: 20px;
+}
+.certificate-2 img {
+  transition: transform 0.5s;
+  margin-bottom: 20px;
+  width: 50%;
+  justify-content: space-between;
 
 }
-
-.certificates img:hover {
+ 
+.certficate-3 {
+  background-color: red;
+  flex-basis: 50%;
+  width: 10px;
+}
+ 
+.certificate-2 img:hover {
   transform: scale(1.1);
 }
-
+.certificates img:hover {
+  transform: scale(1.1);
+  
+}
+ 
+.certified {
+  margin-bottom: 35px;
+}
 
 /* ////......Contact......///// */
 
@@ -452,6 +405,9 @@ h5{
 /* ////......Media query......//// */
 
 @media (max-width: 500px) {
+  html {
+    font-size: 60%;
+  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -516,6 +472,9 @@ h5{
 }
 
 @media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -580,6 +539,9 @@ h5{
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
 
   .about-content .left-content {
     flex-basis: 100%;
@@ -625,14 +587,13 @@ h5{
   }
 }
 
-/**seção educação experiencia idioma**/
-#list {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto;
-  width: 80%;
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    height: 90vmax;
+  }
 }
-
+/**seção educação experiencia idioma**/
+  
 #list button {
   padding: 10px 50px;
   border: 1px solid #ddd;
@@ -641,17 +602,14 @@ h5{
   background-color: #fff;
   font-size: 18px;
   transition: 0.3s;
-  margin-right: 10px;
+  
 }
 @media (max-width: 600px) {
-  #list {
-    flex-wrap: wrap; 
-    justify-content: space-around; 
-  }
-
   #list button {
-    margin-right: 0; 
-    padding: 10px 5px; 
+    padding: 10px 5px;
+    margin: 0;
+    width: 32%;
+  
   }
 }
 #list button:hover {
@@ -665,15 +623,9 @@ h5{
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: flex; 
-  flex-direction: column; 
+  display: none;
 }
 
-@media (max-width: 600px) {
-  #education-content, #experience-content, #languages-content {
-    width: 100%;
-  }
-}
 #education-content h2, #experience-content h2 {
   font-size: 15px;
   margin-bottom: 10px;
@@ -696,4 +648,16 @@ h5{
   margin-left: -10%;
   font-size: 15px;
   line-height: 1.5;
+}
+.copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin: 0; 
+  padding: 10px; 
+  font-size: 14px; 
+  color: #999; 
 }
