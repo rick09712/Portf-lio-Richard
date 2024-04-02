@@ -8,8 +8,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MY PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css">
+  <title>PORTFOLIO RICHARD</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Quattrocento" rel="stylesheet">
   
@@ -106,68 +106,74 @@ speak portuguese, spanish and english
                 </div>
               </div>
             </div>
+              
+            <div id="list">
+              <button class="active" onclick="showContent(this)">Education</button>
+              <button onclick="showContent(this)">Experience</button>
+              <button onclick="showContent(this)">Languages</button>
+            </div>
+            <div id="education-content">
+              <h2>SENAC SP(2024-2027)</h2>
+              <p>Analyst of systems and development (ADS). (On going)</p>
+              <h2>Free Code Camp (oct-2023-feb-2024)</h2>
+              <p>Html,Css,JavaScript Algorithms and Data Structures</p>
+              <h2>DIO. (jan-2024-apr-2024)</h2>
+              <p>Microsoft Azure</p>
+            </div>
+            <div id="experience-content">
+              <h2>My experiences</h2>
+              <p>8 years experience at eletronics repair and maintenance.</p>
+              <p>Self learning and making courses at IT area.</p>
+            </div>
+            <div id="languages-content" >
+              <h3>Portuguese</h3>
+              <p>Fluent-Native</p>
+              <h3>Spanish</h3>
+              <p>Fluent-Native</p>
+              <h3>English</h3>
+              <p>Reading and Writing</p>
+            </div>
+                
+          <script>
+                      function showContent(element) {
+                        const list = document.getElementById("list");
+                        const buttons = list.getElementsByTagName("button");
+                        const educationContent = document.getElementById("education-content");
+                        const experienceContent = document.getElementById("experience-content");
+                        const languagesContent = document.getElementById("languages-content");
+                    
+                        
+                        for (let button of buttons) {
+                          button.classList.remove("active");
+                        }
+                    
+                        
+                        element.classList.add("active");
+                    
+                        
+                        if (element.textContent === "Education") {
+                          educationContent.style.display = "block";
+                          experienceContent.style.display = "none";
+                          languagesContent.style.display = "none";
+                        } else if (element.textContent === "Experience") {
+                          educationContent.style.display = "none";
+                          experienceContent.style.display = "block";
+                          languagesContent.style.display = "none";
+                        } else { 
+                          educationContent.style.display = "none";
+                          experienceContent.style.display = "none";
+                          languagesContent.style.display = "block";
+                        }
+                      }
 
-           
 
-  <div id="list">
-    <button class="active" onclick="showContent(this)">Education</button>
-    <button onclick="showContent(this)">Experience</button>
-    <button onclick="showContent(this)">Languages</button>
-  </div>
-  <div id="education-content">
-    <h2>SENAC SP(2024-2027)</h2>
-    <p>Analyst of systems and development (ADS). (On going)</p>
-    <h2>Free Code Camp (oct-2023-feb-2024)</h2>
-    <p>Html,Css,JavaScript Algorithms and Data Structures</p>
-    <h2>DIO. (jan-2024-apr-2024)</h2>
-    <p>Microsoft Azure</p>
-  </div>
-  <div id="experience-content" style="display: none;">
-    <h2>My experiences</h2>
-    <p>8 years experience at eletronics repair and maintenance.</p>
-    <p>Self learning and making courses at IT area.</p>
-  </div>
-  <div id="languages-content" >
-    <h3>Portuguese</h3>
-    <p>Fluent-Native</p>
-    <h3>Spanish</h3>
-    <p>Fluent-Native</p>
-    <h3>English</h3>
-    <p>Reading and Writing</p>
-  </div>
 
-  <script>
-    function showContent(element) {
-      const list = document.getElementById("list");
-      const buttons = list.getElementsByTagName("button");
-      const educationContent = document.getElementById("education-content");
-      const experienceContent = document.getElementById("experience-content");
-      const languagesContent = document.getElementById("languages-content");
-  
-      
-      for (let button of buttons) {
-        button.classList.remove("active");
-      }
-  
-      
-      element.classList.add("active");
-  
-      
-      if (element.textContent === "Education") {
-        educationContent.style.display = "block";
-        experienceContent.style.display = "none";
-        languagesContent.style.display = "none";
-      } else if (element.textContent === "Experience") {
-        educationContent.style.display = "none";
-        experienceContent.style.display = "block";
-        languagesContent.style.display = "none";
-      } else { 
-        educationContent.style.display = "none";
-        experienceContent.style.display = "none";
-        languagesContent.style.display = "block";
-      }
-    }
-  </script>
+
+
+
+            </script>
+
+ 
 
           
 
@@ -184,13 +190,23 @@ speak portuguese, spanish and english
  </section>
   <!--certificados-->
   <section id="my-certification" class="my-certifications">
-  <h5 class="sub-title certified ">My Certifications</h5>
-    <div id="certification">
-        <div class="certificates ">
-        <div><img src="https://i.postimg.cc/3rzdtpPv/certificado-1.png" alt="" class="certficate-1"></div>
-         <div> <img src="https://i.postimg.cc/SK2NX0F3/certificado-2.png" alt="" class="certificate-2"></div>
-      <div> <img src="https://i.postimg.cc/JzCQY8Kc/certificado-3.png" alt="" class="certificate-3">
-      </div> 
+  
+  <div id="certification">
+    <div class="container">
+      <div class="certificates ">
+        <img src="https://i.postimg.cc/3rzdtpPv/certificado-1.png" alt="" class="certficate-1">
+        <img src="https://i.postimg.cc/SK2NX0F3/certificado-2.png" alt="">
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="certificate-2">
+ 
+        <img src="https://i.postimg.cc/JzCQY8Kc/certificado-3.png" alt="" class="certficate-3">
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -209,7 +225,11 @@ speak portuguese, spanish and english
         <a href="https://github.com/rick09712" target="blank"><i class="fab fa-github"></i> Github</a>
       </div>
     </div>
+    <div class="copyright">
+      <p>Copyright © 2024 RICHARD DUARTE. All rights reserved.</p>
+    </div>
   </div>
+  
 </section>
   <script type="text/javascript">
     $(document).ready(function () {
@@ -254,7 +274,6 @@ speak portuguese, spanish and english
     });
 
   </script>
-
 
 </body>
 
